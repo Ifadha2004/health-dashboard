@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-e4ef91ef8f517a0aa52ff4286856a840"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "start_risk", "format": ".2f", "title": "Risk 1980", "type": "quantitative"}, {"field": "end_risk", "format": ".2f", "title": "Risk 2014", "type": "quantitative"}, {"field": "growth_rate", "format": ".1f", "title": "Growth Rate (%)", "type": "quantitative"}], "x": {"field": "growth_rate", "title": "Risk Growth Rate (%)", "type": "quantitative"}, "y": {"field": "country", "sort": "-x", "title": "Country", "type": "nominal"}}, "height": 500, "title": "Countries with the Fastest Growth in Metabolic Health Risk", "width": 850, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-e4ef91ef8f517a0aa52ff4286856a840": [{"country": "Tokelau", "start_risk": 15.377015693971343, "end_risk": 33.958056567533056, "growth_rate": 120.83645645784524}, {"country": "Solomon Islands", "start_risk": 9.802448547516233, "end_risk": 19.545818829566528, "growth_rate": 99.39731113935908}, {"country": "Papua New Guinea", "start_risk": 10.243060941378598, "end_risk": 20.350790283444585, "growth_rate": 98.67879728445317}, {"country": "Trinidad and Tobago", "start_risk": 9.670267724494472, "end_risk": 18.358484116602614, "growth_rate": 89.8446313963074}, {"country": "Haiti", "start_risk": 9.86234438778825, "end_risk": 18.65764443826592, "growth_rate": 89.18062181410116}, {"country": "Vanuatu", "start_risk": 11.581009934880711, "end_risk": 21.870611862106696, "growth_rate": 88.84891719361063}, {"country": "Kiribati", "start_risk": 16.88982365446908, "end_risk": 31.589691431062136, "growth_rate": 87.03387363492953}, {"country": "Yemen", "start_risk": 10.303799142011844, "end_risk": 19.13363203183536, "growth_rate": 85.6949244460861}, {"country": "Samoa", "start_risk": 18.077493357453918, "end_risk": 33.5399750060202, "growth_rate": 85.5344341321006}, {"country": "Niue", "start_risk": 19.2319527513012, "end_risk": 35.3245886823797, "growth_rate": 83.676557129591}, {"country": "Tuvalu", "start_risk": 19.13045780050122, "end_risk": 34.9381671518017, "growth_rate": 82.6311085502947}, {"country": "Saint Lucia", "start_risk": 11.024675022870197, "end_risk": 20.06317019083453, "growth_rate": 81.98423218112441}, {"country": "Tonga", "start_risk": 18.517730621316012, "end_risk": 33.47033014653619, "growth_rate": 80.74747295442369}, {"country": "Maldives", "start_risk": 7.753305355452596, "end_risk": 13.796976488092975, "growth_rate": 77.94960801318241}, {"country": "Burundi", "start_risk": 6.7953352407824195, "end_risk": 11.960102507978757, "growth_rate": 76.00459851045794}, {"country": "Micronesia (Federated States of)", "start_risk": 18.54603009775083, "end_risk": 32.33684004256531, "growth_rate": 74.35990275076155}, {"country": "Rwanda", "start_risk": 6.6255306609518385, "end_risk": 11.3976755657532, "growth_rate": 72.02660660717227}, {"country": "Bhutan", "start_risk": 8.511052235886797, "end_risk": 14.43978407572067, "growth_rate": 69.65921105307535}, {"country": "Botswana", "start_risk": 11.141644803628617, "end_risk": 18.89686576510536, "growth_rate": 69.60570991233735}, {"country": "Honduras", "start_risk": 10.584842828816745, "end_risk": 17.547629882718258, "growth_rate": 65.78073162263351}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

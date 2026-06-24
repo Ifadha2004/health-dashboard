@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-b1ef97bd9f41baf1ff3a0cfbfcafe3c5"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "change_type", "title": "Change Type", "type": "nominal"}, "tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "start_risk", "format": ".2f", "title": "Risk 1980", "type": "quantitative"}, {"field": "end_risk", "format": ".2f", "title": "Risk 2014", "type": "quantitative"}, {"field": "risk_change", "format": ".2f", "title": "Risk Change", "type": "quantitative"}], "x": {"field": "risk_change", "title": "Change in Risk Score (1980\u20132014)", "type": "quantitative"}, "y": {"field": "country", "sort": "-x", "title": "Country", "type": "nominal"}}, "height": 520, "title": "Countries with Greatest Improvement and Deterioration (1980\u20132014)", "width": 850, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-b1ef97bd9f41baf1ff3a0cfbfcafe3c5": [{"country": "Tokelau", "start_risk": 15.377015693971343, "end_risk": 33.958056567533056, "risk_change": 18.58104087356171, "change_type": "Deteriorated"}, {"country": "Niue", "start_risk": 19.2319527513012, "end_risk": 35.3245886823797, "risk_change": 16.092635931078497, "change_type": "Deteriorated"}, {"country": "Tuvalu", "start_risk": 19.13045780050122, "end_risk": 34.9381671518017, "risk_change": 15.807709351300481, "change_type": "Deteriorated"}, {"country": "Samoa", "start_risk": 18.077493357453918, "end_risk": 33.5399750060202, "risk_change": 15.462481648566282, "change_type": "Deteriorated"}, {"country": "Tonga", "start_risk": 18.517730621316012, "end_risk": 33.47033014653619, "risk_change": 14.95259952522018, "change_type": "Deteriorated"}, {"country": "Kiribati", "start_risk": 16.88982365446908, "end_risk": 31.589691431062136, "risk_change": 14.699867776593056, "change_type": "Deteriorated"}, {"country": "Micronesia (Federated States of)", "start_risk": 18.54603009775083, "end_risk": 32.33684004256531, "risk_change": 13.790809944814484, "change_type": "Deteriorated"}, {"country": "Cook Islands", "start_risk": 25.11669759280422, "end_risk": 37.51321890250756, "risk_change": 12.396521309703342, "change_type": "Deteriorated"}, {"country": "Vanuatu", "start_risk": 11.581009934880711, "end_risk": 21.870611862106696, "risk_change": 10.289601927225984, "change_type": "Deteriorated"}, {"country": "Papua New Guinea", "start_risk": 10.243060941378598, "end_risk": 20.350790283444585, "risk_change": 10.107729342065987, "change_type": "Deteriorated"}, {"country": "Singapore", "start_risk": 14.119761929995835, "end_risk": 9.32804388122315, "risk_change": -4.791718048772685, "change_type": "Improved"}, {"country": "Japan", "start_risk": 11.530130860031203, "end_risk": 8.990731211571838, "risk_change": -2.5393996484593657, "change_type": "Improved"}, {"country": "Belgium", "start_risk": 17.538133605837864, "end_risk": 15.58853310518676, "risk_change": -1.949600500651103, "change_type": "Improved"}, {"country": "China (Hong Kong SAR)", "start_risk": 13.96738756227463, "end_risk": 12.505209650329144, "risk_change": -1.4621779119454867, "change_type": "Improved"}, {"country": "Andorra", "start_risk": 19.549608148679923, "end_risk": 18.25805063652525, "risk_change": -1.2915575121546716, "change_type": "Improved"}, {"country": "Malta", "start_risk": 21.20132574652419, "end_risk": 19.92098560823711, "risk_change": -1.2803401382870803, "change_type": "Improved"}, {"country": "Russian Federation", "start_risk": 20.82081958478676, "end_risk": 19.789944791529035, "risk_change": -1.030874793257727, "change_type": "Improved"}, {"country": "Estonia", "start_risk": 19.99607483461469, "end_risk": 19.017837290663884, "risk_change": -0.9782375439508044, "change_type": "Improved"}, {"country": "South Korea", "start_risk": 8.538870059481361, "end_risk": 7.6444505038632204, "risk_change": -0.8944195556181409, "change_type": "Improved"}, {"country": "Sweden", "start_risk": 16.330227307578333, "end_risk": 15.606258229683958, "risk_change": -0.7239690778943757, "change_type": "Improved"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

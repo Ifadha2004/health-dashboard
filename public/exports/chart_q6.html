@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "rule", "strokeWidth": 2}, "encoding": {"x": {"field": "Men", "title": "Combined Risk Score (%)", "type": "quantitative"}, "x2": {"field": "Women"}, "y": {"field": "country", "sort": {"field": "gap", "order": "descending"}, "title": "Country", "type": "nominal"}}}, {"mark": {"type": "circle", "size": 120}, "encoding": {"color": {"value": "#1f77b4"}, "tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "Men", "format": ".2f", "title": "Men", "type": "quantitative"}, {"field": "Women", "format": ".2f", "title": "Women", "type": "quantitative"}, {"field": "gap", "format": ".2f", "title": "Gap", "type": "quantitative"}], "x": {"field": "Men", "type": "quantitative"}, "y": {"field": "country", "sort": {"field": "gap", "order": "descending"}, "type": "nominal"}}}, {"mark": {"type": "circle", "size": 120}, "encoding": {"color": {"value": "#d62728"}, "tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "Men", "format": ".2f", "title": "Men", "type": "quantitative"}, {"field": "Women", "format": ".2f", "title": "Women", "type": "quantitative"}, {"field": "gap", "format": ".2f", "title": "Gap", "type": "quantitative"}], "x": {"field": "Women", "type": "quantitative"}, "y": {"field": "country", "sort": {"field": "gap", "order": "descending"}, "type": "nominal"}}}], "data": {"name": "data-391e5002cba3e1e343e7302805b16c81"}, "height": 600, "title": "Top 20 Countries with the Largest Gender Disparities in Metabolic Risk (2014)", "width": 850, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-391e5002cba3e1e343e7302805b16c81": [{"country": "Lesotho", "Men": 11.768580632350227, "Women": 22.711915038608936, "gap": 10.943334406258709}, {"country": "South Africa", "Men": 17.080061270227738, "Women": 27.64563705817303, "gap": 10.565575787945292}, {"country": "Swaziland", "Men": 12.852687815714583, "Women": 23.00981080915585, "gap": 10.157122993441268}, {"country": "Botswana", "Men": 14.224608889214608, "Women": 23.569122640996113, "gap": 9.344513751781506}, {"country": "Zimbabwe", "Men": 11.882136070518692, "Women": 21.175257577558234, "gap": 9.293121507039542}, {"country": "Egypt", "Men": 21.103568702603003, "Women": 29.918323492636002, "gap": 8.814754790033}, {"country": "Jamaica", "Men": 16.04288833799944, "Women": 23.505183821160262, "gap": 7.462295483160823}, {"country": "Namibia", "Men": 13.510629316601197, "Women": 20.87729374512093, "gap": 7.366664428519734}, {"country": "Iceland", "Men": 19.899355795614202, "Women": 13.15718673952873, "gap": 6.742169056085473}, {"country": "Belize", "Men": 16.770466008307217, "Women": 23.487285625985386, "gap": 6.716819617678169}, {"country": "Turkey", "Men": 19.62669274608329, "Women": 26.202731084774626, "gap": 6.576038338691337}, {"country": "Tunisia", "Men": 18.28412474162855, "Women": 24.496701522276858, "gap": 6.212576780648309}, {"country": "Dominica", "Men": 18.084415080983813, "Women": 24.276267345560004, "gap": 6.191852264576191}, {"country": "Barbados", "Men": 16.9333090006016, "Women": 23.122527785514713, "gap": 6.189218784913113}, {"country": "Grenada", "Men": 15.83653644095731, "Women": 22.009948556357312, "gap": 6.1734121154000015}, {"country": "Denmark", "Men": 18.58422381722419, "Women": 12.422909705766475, "gap": 6.161314111457713}, {"country": "Algeria", "Men": 19.07110980952849, "Women": 25.23125706084478, "gap": 6.160147251316289}, {"country": "Guyana", "Men": 14.882970012856035, "Women": 20.91406821439605, "gap": 6.031098201540015}, {"country": "Luxembourg", "Men": 20.290885482787818, "Women": 14.42979744233317, "gap": 5.861088040454648}, {"country": "Syrian Arab Republic", "Men": 19.884566142065967, "Women": 25.71335365607969, "gap": 5.828787514013722}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

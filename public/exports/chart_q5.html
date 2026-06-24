@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-b1f5ae9142c7ff5eeec64ab299f321c7"}, "mark": {"type": "line", "strokeWidth": 4}, "encoding": {"color": {"field": "sex", "scale": {"domain": ["Men", "Women"], "range": ["#1f77b4", "#d62728"]}, "title": "Gender", "type": "nominal"}, "tooltip": [{"field": "year", "format": ".0f", "title": "Year", "type": "quantitative"}, {"field": "sex", "title": "Gender", "type": "nominal"}, {"field": "obesity_pct", "format": ".2f", "title": "Obesity (%)", "type": "quantitative"}], "x": {"axis": {"format": ".0f"}, "field": "year", "title": "Year", "type": "quantitative"}, "y": {"field": "obesity_pct", "title": "Average Obesity Prevalence (%)", "type": "quantitative"}}, "height": 420, "title": "Global Obesity Trends by Gender (1980\u20132014)", "width": 850, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-b1f5ae9142c7ff5eeec64ab299f321c7": [{"year": 1980, "sex": "Men", "obesity_pct": 5.5394515960223405}, {"year": 1980, "sex": "Women", "obesity_pct": 11.227480568588613}, {"year": 1981, "sex": "Men", "obesity_pct": 5.760239735670801}, {"year": 1981, "sex": "Women", "obesity_pct": 11.542105155415522}, {"year": 1982, "sex": "Men", "obesity_pct": 5.988171051377109}, {"year": 1982, "sex": "Women", "obesity_pct": 11.861509023836714}, {"year": 1983, "sex": "Men", "obesity_pct": 6.223565684586931}, {"year": 1983, "sex": "Women", "obesity_pct": 12.1859513578466}, {"year": 1984, "sex": "Men", "obesity_pct": 6.466486966408599}, {"year": 1984, "sex": "Women", "obesity_pct": 12.51579627494396}, {"year": 1985, "sex": "Men", "obesity_pct": 6.717310720265532}, {"year": 1985, "sex": "Women", "obesity_pct": 12.8508805807648}, {"year": 1986, "sex": "Men", "obesity_pct": 6.974308758375364}, {"year": 1986, "sex": "Women", "obesity_pct": 13.189394163287739}, {"year": 1987, "sex": "Men", "obesity_pct": 7.237995133666923}, {"year": 1987, "sex": "Women", "obesity_pct": 13.531667447764267}, {"year": 1988, "sex": "Men", "obesity_pct": 7.508173660073108}, {"year": 1988, "sex": "Women", "obesity_pct": 13.877973256958176}, {"year": 1989, "sex": "Men", "obesity_pct": 7.78530066528093}, {"year": 1989, "sex": "Women", "obesity_pct": 14.228292489329037}, {"year": 1990, "sex": "Men", "obesity_pct": 8.069483881071813}, {"year": 1990, "sex": "Women", "obesity_pct": 14.583160456672799}, {"year": 1991, "sex": "Men", "obesity_pct": 8.35745045017141}, {"year": 1991, "sex": "Women", "obesity_pct": 14.93711434695288}, {"year": 1992, "sex": "Men", "obesity_pct": 8.649231952333432}, {"year": 1992, "sex": "Women", "obesity_pct": 15.290603559535136}, {"year": 1993, "sex": "Men", "obesity_pct": 8.94526493678857}, {"year": 1993, "sex": "Women", "obesity_pct": 15.64414117280895}, {"year": 1994, "sex": "Men", "obesity_pct": 9.246059020154396}, {"year": 1994, "sex": "Women", "obesity_pct": 15.998881185091069}, {"year": 1995, "sex": "Men", "obesity_pct": 9.551803368914555}, {"year": 1995, "sex": "Women", "obesity_pct": 16.355863583356495}, {"year": 1996, "sex": "Men", "obesity_pct": 9.862592698274641}, {"year": 1996, "sex": "Women", "obesity_pct": 16.714593182688876}, {"year": 1997, "sex": "Men", "obesity_pct": 10.178872229587693}, {"year": 1997, "sex": "Women", "obesity_pct": 17.076060694966944}, {"year": 1998, "sex": "Men", "obesity_pct": 10.500990811601419}, {"year": 1998, "sex": "Women", "obesity_pct": 17.440742363754893}, {"year": 1999, "sex": "Men", "obesity_pct": 10.829410586046942}, {"year": 1999, "sex": "Women", "obesity_pct": 17.809324462299937}, {"year": 2000, "sex": "Men", "obesity_pct": 11.164459333942505}, {"year": 2000, "sex": "Women", "obesity_pct": 18.182173282316306}, {"year": 2001, "sex": "Men", "obesity_pct": 11.507200950423655}, {"year": 2001, "sex": "Women", "obesity_pct": 18.56065666557873}, {"year": 2002, "sex": "Men", "obesity_pct": 11.857730167709803}, {"year": 2002, "sex": "Women", "obesity_pct": 18.94485712981328}, {"year": 2003, "sex": "Men", "obesity_pct": 12.216195352081357}, {"year": 2003, "sex": "Women", "obesity_pct": 19.33438226025414}, {"year": 2004, "sex": "Men", "obesity_pct": 12.582681032017181}, {"year": 2004, "sex": "Women", "obesity_pct": 19.729146294283815}, {"year": 2005, "sex": "Men", "obesity_pct": 12.95741077162439}, {"year": 2005, "sex": "Women", "obesity_pct": 20.128996583865202}, {"year": 2006, "sex": "Men", "obesity_pct": 13.339913149454553}, {"year": 2006, "sex": "Women", "obesity_pct": 20.534020237963087}, {"year": 2007, "sex": "Men", "obesity_pct": 13.730498394416259}, {"year": 2007, "sex": "Women", "obesity_pct": 20.944411702536076}, {"year": 2008, "sex": "Men", "obesity_pct": 14.129486650642555}, {"year": 2008, "sex": "Women", "obesity_pct": 21.360023927101555}, {"year": 2009, "sex": "Men", "obesity_pct": 14.53700172613055}, {"year": 2009, "sex": "Women", "obesity_pct": 21.78063590654936}, {"year": 2010, "sex": "Men", "obesity_pct": 14.953347111418697}, {"year": 2010, "sex": "Women", "obesity_pct": 22.206372265182765}, {"year": 2011, "sex": "Men", "obesity_pct": 15.378517871964226}, {"year": 2011, "sex": "Women", "obesity_pct": 22.637506482519715}, {"year": 2012, "sex": "Men", "obesity_pct": 15.813157281225976}, {"year": 2012, "sex": "Women", "obesity_pct": 23.074242154829125}, {"year": 2013, "sex": "Men", "obesity_pct": 16.25816483858978}, {"year": 2013, "sex": "Women", "obesity_pct": 23.51675001804658}, {"year": 2014, "sex": "Men", "obesity_pct": 16.714484886062852}, {"year": 2014, "sex": "Women", "obesity_pct": 23.965327180023554}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

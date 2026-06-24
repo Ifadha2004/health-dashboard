@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "rect"}, "encoding": {"color": {"field": "correlation", "scale": {"domain": [-1, 1], "scheme": "redblue"}, "title": "Correlation", "type": "quantitative"}, "tooltip": [{"field": "indicator_1", "title": "Indicator 1", "type": "nominal"}, {"field": "indicator_2", "title": "Indicator 2", "type": "nominal"}, {"field": "correlation", "format": ".2f", "title": "Correlation", "type": "quantitative"}], "x": {"field": "indicator_1", "title": "Indicator", "type": "nominal"}, "y": {"field": "indicator_2", "title": "Indicator", "type": "nominal"}}}, {"mark": {"type": "text", "size": 14}, "encoding": {"color": {"condition": {"test": "datum.correlation > 0.5 || datum.correlation < -0.5", "value": "white"}, "value": "black"}, "text": {"field": "correlation", "format": ".2f", "type": "quantitative"}, "x": {"field": "indicator_1", "type": "nominal"}, "y": {"field": "indicator_2", "type": "nominal"}}}], "data": {"name": "data-c5ea65b00deddb54dab429f51f960a6e"}, "height": 360, "title": "Correlation Between Health Indicators (2014)", "width": 420, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-c5ea65b00deddb54dab429f51f960a6e": [{"indicator_1": "Obesity", "indicator_2": "Obesity", "correlation": 1.0}, {"indicator_1": "Diabetes", "indicator_2": "Obesity", "correlation": 0.7558013515751356}, {"indicator_1": "Raised Blood Pressure", "indicator_2": "Obesity", "correlation": -0.3385666882711937}, {"indicator_1": "Obesity", "indicator_2": "Diabetes", "correlation": 0.7558013515751356}, {"indicator_1": "Diabetes", "indicator_2": "Diabetes", "correlation": 1.0}, {"indicator_1": "Raised Blood Pressure", "indicator_2": "Diabetes", "correlation": -0.08177972730696047}, {"indicator_1": "Obesity", "indicator_2": "Raised Blood Pressure", "correlation": -0.3385666882711937}, {"indicator_1": "Diabetes", "indicator_2": "Raised Blood Pressure", "correlation": -0.08177972730696047}, {"indicator_1": "Raised Blood Pressure", "indicator_2": "Raised Blood Pressure", "correlation": 1.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

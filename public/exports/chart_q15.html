@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-3713baaa3ddffef0fb6d2822f99f437c"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "risk_2014", "scale": {"scheme": "reds"}, "title": "Latest Risk Score", "type": "quantitative"}, "tooltip": [{"field": "country", "title": "Country", "type": "nominal"}, {"field": "risk_2014", "format": ".2f", "title": "Risk 2014", "type": "quantitative"}, {"field": "growth_rate", "format": ".1f", "title": "Growth Rate (%)", "type": "quantitative"}, {"field": "future_risk_index", "format": ".3f", "title": "Priority Index", "type": "quantitative"}], "x": {"field": "future_risk_index", "title": "Normalised Future Risk Priority Index", "type": "quantitative"}, "y": {"field": "country", "sort": "-x", "title": "Country", "type": "nominal"}}, "height": 520, "title": "Future High-Risk Priority Countries", "width": 850, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-3713baaa3ddffef0fb6d2822f99f437c": [{"country": "Tokelau", "risk_1980": 15.377015693971343, "risk_2014": 33.958056567533056, "growth_rate": 120.83645645784524, "norm_current_risk": 0.7969645374983073, "norm_growth_rate": 1.0, "future_risk_index": 0.857875176248815}, {"country": "American Samoa", "risk_1980": 32.320117182469566, "risk_2014": 40.66173650038816, "growth_rate": 25.80937213446456, "norm_current_risk": 1.0, "norm_growth_rate": 0.38602170229980615, "future_risk_index": 0.8158065106899418}, {"country": "Niue", "risk_1980": 19.2319527513012, "risk_2014": 35.3245886823797, "growth_rate": 83.676557129591, "norm_current_risk": 0.8383529216008186, "norm_growth_rate": 0.7599066424617368, "future_risk_index": 0.814819037859094}, {"country": "Tuvalu", "risk_1980": 19.13045780050122, "risk_2014": 34.9381671518017, "growth_rate": 82.6311085502947, "norm_current_risk": 0.8266493088139085, "norm_growth_rate": 0.7531519078129805, "future_risk_index": 0.8046000885136301}, {"country": "Cook Islands", "risk_1980": 25.11669759280422, "risk_2014": 37.51321890250756, "growth_rate": 49.35569759479395, "norm_current_risk": 0.9046403269423181, "norm_growth_rate": 0.538156569176604, "future_risk_index": 0.7946951996126038}, {"country": "Samoa", "risk_1980": 18.077493357453918, "risk_2014": 33.5399750060202, "growth_rate": 85.5344341321006, "norm_current_risk": 0.7843020321198562, "norm_growth_rate": 0.7719105481635613, "future_risk_index": 0.7805845869329676}, {"country": "Tonga", "risk_1980": 18.517730621316012, "risk_2014": 33.47033014653619, "growth_rate": 80.74747295442369, "norm_current_risk": 0.7821926867456986, "norm_growth_rate": 0.7409815735880061, "future_risk_index": 0.7698293527983908}, {"country": "Nauru", "risk_1980": 38.534204360453224, "risk_2014": 39.67035129648803, "growth_rate": 2.9484115603040895, "norm_current_risk": 0.9699737524154931, "norm_growth_rate": 0.23831503785718464, "future_risk_index": 0.7504761380480005}, {"country": "Palau", "risk_1980": 26.344256700119995, "risk_2014": 36.16091331338277, "growth_rate": 37.26298572401195, "norm_current_risk": 0.8636828239765346, "norm_growth_rate": 0.46002450081033436, "future_risk_index": 0.7425853270266745}, {"country": "Kiribati", "risk_1980": 16.88982365446908, "risk_2014": 31.589691431062136, "growth_rate": 87.03387363492953, "norm_current_risk": 0.725233471028453, "norm_growth_rate": 0.7815985578505513, "future_risk_index": 0.7421429970750825}, {"country": "Micronesia (Federated States of)", "risk_1980": 18.54603009775083, "risk_2014": 32.33684004256531, "growth_rate": 74.35990275076155, "norm_current_risk": 0.7478624845573607, "norm_growth_rate": 0.6997109241935784, "future_risk_index": 0.733417016448226}, {"country": "French Polynesia", "risk_1980": 26.277092524088282, "risk_2014": 34.84665486634933, "growth_rate": 32.61229275805651, "norm_current_risk": 0.8238776610939232, "norm_growth_rate": 0.4299759670612985, "future_risk_index": 0.7057071528841359}, {"country": "Marshall Islands", "risk_1980": 24.45974276428928, "risk_2014": 34.08071970981322, "growth_rate": 39.33392529201235, "norm_current_risk": 0.800679656369467, "norm_growth_rate": 0.4734050223706283, "future_risk_index": 0.7024972661698154}, {"country": "Saudi Arabia", "risk_1980": 18.646850695778703, "risk_2014": 26.72904600042689, "growth_rate": 43.34348698613136, "norm_current_risk": 0.5780182992197578, "norm_growth_rate": 0.49931115093394973, "future_risk_index": 0.5544061547340153}, {"country": "Egypt", "risk_1980": 16.706862606582725, "risk_2014": 25.510946097619502, "growth_rate": 52.697407636355685, "norm_current_risk": 0.5411255060648149, "norm_growth_rate": 0.5597476498388664, "future_risk_index": 0.5467121491970304}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
