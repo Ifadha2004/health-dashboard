@@ -1,26 +1,26 @@
 import { useState } from "react";
 
-// ─── Colour tokens ───────────────────────────────────────────────────────────
+// ─── Premium Colour Tokens ───────────────────────────────────────────────────
 const C = {
-  bg:       "#0d0f14",
-  surface:  "#13161e",
-  card:     "#1a1e28",
-  border:   "#2a2e3d",
-  text:     "#e8eaf0",
-  muted:    "#6b7280",
-  subtle:   "#3a3f52",
-  purple:   "#7F77DD",
-  teal:     "#1D9E75",
-  coral:    "#D85A30",
-  blue:     "#378ADD",
-  pink:     "#D4537E",
-  amber:    "#BA7517",
-  red:      "#d62728",
-  orange:   "#ff7f0e",
-  gray:     "#7f7f7f",
+  bg:       "#0a0c10", // Deeper rich dark background
+  surface:  "#111319", // Slightly lighter for structural containers
+  card:     "#171a23", // Card surface
+  border:   "#222735", // Refined, subtle borders
+  text:     "#f1f3f9", // Bright text for maximum contrast
+  muted:    "#8a93a6", // Clean, readable secondary text
+  subtle:   "#2c3142",
+  purple:   "#8B80F9",
+  teal:     "#14B8A6",
+  coral:    "#F43F5E",
+  blue:     "#3B82F6",
+  pink:     "#EC4899",
+  amber:    "#F59E0B",
+  red:      "#EF4444",
+  orange:   "#F97316",
+  gray:     "#6B7280",
 };
 
-// ─── Section metadata ────────────────────────────────────────────────────────
+// ─── Section Metadata ────────────────────────────────────────────────────────
 const SECTIONS = [
   {
     id: 0,
@@ -29,7 +29,7 @@ const SECTIONS = [
     badge: "Section 01",
     title: "Global Health Landscape",
     accent: C.purple,
-    badgeBg: "#26215C",
+    badgeBg: "rgba(139, 128, 249, 0.15)",
     badgeColor: "#AFA9EC",
     tagClass: "purple",
     kpis: [
@@ -73,7 +73,7 @@ const SECTIONS = [
     badge: "Section 02",
     title: "Geographic Risk",
     accent: C.blue,
-    badgeBg: "#042C53",
+    badgeBg: "rgba(59, 130, 246, 0.15)",
     badgeColor: "#85B7EB",
     tagClass: "blue",
     kpis: [
@@ -125,7 +125,7 @@ const SECTIONS = [
     badge: "Section 03",
     title: "Gender Disparities",
     accent: C.pink,
-    badgeBg: "#4B1528",
+    badgeBg: "rgba(236, 72, 153, 0.15)",
     badgeColor: "#ED93B1",
     tagClass: "pink",
     kpis: [
@@ -169,7 +169,7 @@ const SECTIONS = [
     badge: "Section 04",
     title: "Indicator Relationships",
     accent: C.teal,
-    badgeBg: "#04342C",
+    badgeBg: "rgba(20, 184, 166, 0.15)",
     badgeColor: "#5DCAA5",
     tagClass: "teal",
     kpis: [
@@ -221,7 +221,7 @@ const SECTIONS = [
     badge: "Section 05",
     title: "Country Segmentation",
     accent: C.amber,
-    badgeBg: "#412402",
+    badgeBg: "rgba(245, 158, 11, 0.15)",
     badgeColor: "#EF9F27",
     tagClass: "amber",
     kpis: [
@@ -266,7 +266,7 @@ const SECTIONS = [
     badge: "Section 06",
     title: "Policy Prioritisation",
     accent: C.coral,
-    badgeBg: "#4A1B0C",
+    badgeBg: "rgba(244, 63, 94, 0.15)",
     badgeColor: "#F0997B",
     tagClass: "coral",
     kpis: [
@@ -308,12 +308,12 @@ const SECTIONS = [
 
 // ─── Tag colours ─────────────────────────────────────────────────────────────
 const TAG_STYLES = {
-  purple: { background: "#26215C", color: "#AFA9EC" },
-  blue:   { background: "#042C53", color: "#85B7EB" },
-  teal:   { background: "#04342C", color: "#5DCAA5" },
-  pink:   { background: "#4B1528", color: "#ED93B1" },
-  amber:  { background: "#412402", color: "#EF9F27" },
-  coral:  { background: "#4A1B0C", color: "#F0997B" },
+  purple: { background: "rgba(139, 128, 249, 0.12)", color: "#b4acef" },
+  blue:   { background: "rgba(59, 130, 246, 0.12)", color: "#93c5fd" },
+  teal:   { background: "rgba(20, 184, 166, 0.12)", color: "#99f6e4" },
+  pink:   { background: "rgba(236, 72, 153, 0.12)", color: "#fbcfe8" },
+  amber:  { background: "rgba(245, 158, 11, 0.12)", color: "#fde68a" },
+  coral:  { background: "rgba(244, 63, 94, 0.12)", color: "#fecdd3" },
 };
 
 // ─── Fullscreen Modal ────────────────────────────────────────────────────────
@@ -323,10 +323,10 @@ function FullscreenModal({ varName, title, onClose }) {
       onClick={onClose}
       style={{
         position: "fixed", inset: 0, zIndex: 9999,
-        background: "rgba(0,0,0,0.85)",
+        background: "rgba(5, 7, 10, 0.85)",
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",
-        backdropFilter: "blur(4px)",
+        backdropFilter: "blur(8px)",
       }}
     >
       <div
@@ -338,22 +338,22 @@ function FullscreenModal({ varName, title, onClose }) {
           borderRadius: 14,
           display: "flex", flexDirection: "column",
           overflow: "hidden",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.6)",
+          boxShadow: "0 32px 64px rgba(0,0,0,0.5)",
         }}
       >
         <div style={{
-          padding: "12px 16px",
+          padding: "16px 20px",
           borderBottom: `1px solid ${C.border}`,
           display: "flex", alignItems: "center", justifyContent: "space-between",
           flexShrink: 0,
         }}>
-          <span style={{ fontSize: 13, fontWeight: 500, color: C.text }}>{title}</span>
+          <span style={{ fontSize: 14, fontWeight: 600, color: C.text, letterSpacing: "-0.01em" }}>{title}</span>
           <button
             onClick={onClose}
             style={{
-              background: C.subtle, border: "none", borderRadius: 6,
-              color: C.text, fontSize: 13, fontWeight: 500,
-              padding: "5px 14px", cursor: "pointer",
+              background: C.subtle, border: "none", borderRadius: 8,
+              color: C.text, fontSize: 12, fontWeight: 500,
+              padding: "6px 14px", cursor: "pointer", transition: "all 0.15s",
             }}
           >
             ✕ Close
@@ -363,7 +363,7 @@ function FullscreenModal({ varName, title, onClose }) {
           src={`${process.env.PUBLIC_URL}/exports/${varName}.html`}
           width="100%"
           height="100%"
-          style={{ border: "none", display: "block", flex: 1 }}
+          style={{ border: "none", display: "block", flex: 1, background: "#ffffff" }}
           title={`${varName}-fullscreen`}
         />
       </div>
@@ -377,11 +377,10 @@ function Tag({ label, type }) {
     <span style={{
       ...TAG_STYLES[type],
       display: "inline-block",
-      fontSize: 10,
-      fontWeight: 600,
-      padding: "3px 8px",
-      borderRadius: 12,
-      letterSpacing: ".04em",
+      fontSize: 11,
+      fontWeight: 500,
+      padding: "3px 10px",
+      borderRadius: 20,
       whiteSpace: "nowrap",
     }}>{label}</span>
   );
@@ -390,14 +389,15 @@ function Tag({ label, type }) {
 function KpiCard({ label, value, delta, deltaColor }) {
   return (
     <div style={{
-      background: C.card,
+      background: `linear-gradient(135deg, ${C.card} 0%, #1a1e29 100%)`,
       border: `1px solid ${C.border}`,
-      borderRadius: 10,
-      padding: "14px 16px",
+      borderRadius: 12,
+      padding: "18px 20px",
+      boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
     }}>
-      <div style={{ fontSize: 10, color: C.muted, fontWeight: 600, textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 6 }}>{label}</div>
-      <div style={{ fontSize: 22, fontWeight: 700, color: C.text }}>{value}</div>
-      <div style={{ fontSize: 11, marginTop: 4, color: deltaColor || C.muted }}>{delta}</div>
+      <div style={{ fontSize: 11, color: C.muted, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>{label}</div>
+      <div style={{ fontSize: 26, fontWeight: 700, color: C.text, letterSpacing: "-0.02em" }}>{value}</div>
+      <div style={{ fontSize: 12, marginTop: 6, color: deltaColor || C.muted, fontWeight: 500 }}>{delta}</div>
     </div>
   );
 }
@@ -406,22 +406,23 @@ function InteractionBanner({ interaction, accent }) {
   if (!interaction) return null;
   return (
     <div style={{
-      background: C.card,
+      background: "rgba(23, 26, 35, 0.6)",
       border: `1px solid ${C.border}`,
-      borderLeft: `3px solid ${accent}`,
-      borderRadius: 10,
-      padding: "12px 16px",
-      marginBottom: 16,
+      borderLeft: `4px solid ${accent}`,
+      borderRadius: 12,
+      padding: "14px 20px",
+      marginBottom: 20,
       display: "flex",
-      alignItems: "flex-start",
-      gap: 12,
+      alignItems: "center",
+      gap: 14,
     }}>
-      <span style={{ fontSize: 18, flexShrink: 0 }}>{interaction.icon}</span>
-      <div style={{ fontSize: 12, color: C.muted, lineHeight: 1.6 }}>
-        <span style={{ color: C.text, fontWeight: 500 }}>
+      <span style={{ fontSize: 20, flexShrink: 0 }}>{interaction.icon}</span>
+      <div style={{ fontSize: 13, color: C.muted, lineHeight: 1.5 }}>
+        <span style={{ color: C.text, fontWeight: 600, letterSpacing: "-0.01em" }}>
           Interaction {interaction.number} — {interaction.name}
         </span>
-        <br />{interaction.hint}
+        <span style={{ margin: "0 8px", color: C.border }}>|</span>
+        {interaction.hint}
       </div>
     </div>
   );
@@ -433,7 +434,7 @@ function ChartPlaceholder({ varName, height }) {
       src={`${process.env.PUBLIC_URL}/exports/${varName}.html`}
       width="100%"
       height={height}
-      style={{ border: "none", display: "block" }}
+      style={{ border: "none", display: "block", background: "#ffffff", borderRadius: "0 0 12px 12px" }}
       title={varName}
     />
   );
@@ -448,39 +449,40 @@ function ExpandBtn({ onClick }) {
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
-        background: hov ? C.subtle : "rgba(13,15,20,0.8)",
-        border: `1px solid ${hov ? C.subtle : C.border}`,
-        borderRadius: 6, color: hov ? C.text : C.muted,
-        width: 28, height: 28, cursor: "pointer",
+        background: hov ? C.subtle : "rgba(25, 29, 38, 0.8)",
+        border: `1px solid ${hov ? "#444c66" : C.border}`,
+        borderRadius: 8, color: hov ? C.text : C.muted,
+        width: 32, height: 32, cursor: "pointer",
         display: "flex", alignItems: "center", justifyContent: "center",
-        fontSize: 14, flexShrink: 0, transition: "all .15s",
+        fontSize: 16, flexShrink: 0, transition: "all .15s ease",
       }}
     >⤢</button>
   );
 }
 
-function ChartCard({ title, sub, tag, tagType, varName, icon, height, fullWidth, onExpand }) {
+function ChartCard({ title, sub, tag, tagType, varName, height, fullWidth, onExpand }) {
   return (
     <div style={{
       background: C.card,
       border: `1px solid ${C.border}`,
-      borderRadius: 10,
+      borderRadius: 12,
       overflow: "hidden",
       gridColumn: fullWidth ? "1 / -1" : undefined,
+      boxShadow: "0 4px 30px rgba(0,0,0,0.2)",
     }}>
       <div style={{
-        padding: "14px 16px 10px",
+        padding: "16px 20px",
         borderBottom: `1px solid ${C.border}`,
         display: "flex",
-        alignItems: "flex-start",
+        alignItems: "center",
         justifyContent: "space-between",
         gap: 12,
       }}>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 13, fontWeight: 500, color: C.text }}>{title}</div>
-          {sub && <div style={{ fontSize: 11, color: C.muted, marginTop: 2 }}>{sub}</div>}
+          <div style={{ fontSize: 14, fontWeight: 600, color: C.text, letterSpacing: "-0.01em" }}>{title}</div>
+          {sub && <div style={{ fontSize: 12, color: C.muted, marginTop: 2 }}>{sub}</div>}
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
           {tag && <Tag label={tag} type={tagType} />}
           <ExpandBtn onClick={() => onExpand(varName, title)} />
         </div>
@@ -493,26 +495,27 @@ function ChartCard({ title, sub, tag, tagType, varName, icon, height, fullWidth,
 function FindingBox({ text, label, accent }) {
   return (
     <div style={{
-      background: C.card,
+      background: `linear-gradient(160deg, ${C.card} 0%, #151821 100%)`,
       border: `1px solid ${C.border}`,
-      borderLeft: `3px solid ${accent}`,
-      borderRadius: 10,
-      padding: "14px 16px",
-      marginTop: 16,
+      borderLeft: `4px solid ${accent}`,
+      borderRadius: 12,
+      padding: "20px",
+      marginTop: 24,
+      boxShadow: "0 4px 25px rgba(0,0,0,0.15)",
     }}>
       <div style={{
         fontSize: 11,
-        fontWeight: 600,
+        fontWeight: 700,
         textTransform: "uppercase",
-        letterSpacing: ".06em",
+        letterSpacing: "0.08em",
         color: accent,
-        marginBottom: 8,
+        marginBottom: 10,
       }}>
         💡 {label || "Key finding"}
       </div>
       <div
-        style={{ fontSize: 12, color: C.muted, lineHeight: 1.7 }}
-        dangerouslySetInnerHTML={{ __html: text.replace(/<b>/g, `<strong style="color:${C.text};font-weight:500">`).replace(/<\/b>/g, "</strong>") }}
+        style={{ fontSize: 13, color: C.muted, lineHeight: 1.7 }}
+        dangerouslySetInnerHTML={{ __html: text.replace(/<b>/g, `<strong style="color:${C.text};font-weight:600">`).replace(/<\/b>/g, "</strong>") }}
       />
     </div>
   );
@@ -521,7 +524,7 @@ function FindingBox({ text, label, accent }) {
 // ─── Section panels ───────────────────────────────────────────────────────────
 function SectionPanel({ section }) {
   const { accent, tagClass, kpis, interaction, charts, extraChart, finding, findingLabel } = section;
-  const [modal, setModal] = useState(null); // { varName, title }
+  const [modal, setModal] = useState(null);
   const threeColCharts = section.id === 3;
   const openModal = (varName, title) => setModal({ varName, title });
   const closeModal = () => setModal(null);
@@ -533,7 +536,7 @@ function SectionPanel({ section }) {
 
       {/* KPIs */}
       {kpis && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12, marginBottom: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, marginBottom: 24 }}>
           {kpis.map((k) => (
             <KpiCard key={k.label} label={k.label} value={k.value} delta={k.delta} deltaColor={k.dc} />
           ))}
@@ -545,25 +548,25 @@ function SectionPanel({ section }) {
 
       {/* Main interaction chart */}
       {interaction && (
-        <div style={{ marginBottom: 16 }}>
-          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, overflow: "hidden" }}>
+        <div style={{ marginBottom: 24 }}>
+          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.2)" }}>
             <div style={{
-              padding: "14px 16px 10px",
+              padding: "16px 20px",
               borderBottom: `1px solid ${C.border}`,
               display: "flex",
-              alignItems: "flex-start",
+              alignItems: "center",
               justifyContent: "space-between",
               gap: 12,
             }}>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 13, fontWeight: 500, color: C.text }}>
+                <div style={{ fontSize: 14, fontWeight: 600, color: C.text, letterSpacing: "-0.01em" }}>
                   Interaction {interaction.number} — {interaction.name}
                 </div>
-                <div style={{ fontSize: 11, color: C.muted, marginTop: 2 }}>
+                <div style={{ fontSize: 12, color: C.muted, marginTop: 2 }}>
                   Linked interactive dashboard
                 </div>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
                 <Tag label="Interactive" type={tagClass} />
                 <ExpandBtn onClick={() => openModal(interaction.varName, `Interaction ${interaction.number} — ${interaction.name}`)} />
               </div>
@@ -578,8 +581,8 @@ function SectionPanel({ section }) {
         <div style={{
           display: "grid",
           gridTemplateColumns: threeColCharts ? "repeat(3,1fr)" : "repeat(2,1fr)",
-          gap: 16,
-          marginBottom: 16,
+          gap: 20,
+          marginBottom: 24,
         }}>
           {charts.map((ch) => (
             <ChartCard
@@ -589,7 +592,6 @@ function SectionPanel({ section }) {
               tag={ch.tag}
               tagType={tagClass}
               varName={ch.varName}
-              icon={ch.icon}
               height={ch.height}
               onExpand={openModal}
             />
@@ -597,16 +599,15 @@ function SectionPanel({ section }) {
         </div>
       )}
 
-      {/* Extra full-width chart (geographic + segmentation) */}
+      {/* Extra full-width chart */}
       {extraChart && (
-        <div style={{ marginBottom: 16 }}>
+        <div style={{ marginBottom: 24 }}>
           <ChartCard
             title={extraChart.title}
             sub={extraChart.sub}
             tag={extraChart.tag}
             tagType={tagClass}
             varName={extraChart.varName}
-            icon={extraChart.icon}
             height={extraChart.height}
             fullWidth
             onExpand={openModal}
@@ -628,28 +629,28 @@ export default function App() {
   const sec = SECTIONS[active];
 
   return (
-    <div style={{ display: "flex", height: "100vh", overflow: "hidden", background: C.bg, color: C.text, fontFamily: "system-ui, -apple-system, sans-serif" }}>
+    <div style={{ display: "flex", height: "100vh", overflow: "hidden", background: C.bg, color: C.text, fontFamily: '"Inter", system-ui, -apple-system, sans-serif' }}>
 
       {/* ── Sidebar ── */}
       <div style={{
-        width: 220,
-        minWidth: 220,
+        width: 250,
+        minWidth: 250,
         background: C.surface,
         borderRight: `1px solid ${C.border}`,
         display: "flex",
         flexDirection: "column",
       }}>
         {/* Logo */}
-        <div style={{ padding: "20px 16px 16px", borderBottom: `1px solid ${C.border}` }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: C.text, letterSpacing: ".04em", textTransform: "uppercase", lineHeight: 1.4 }}>
+        <div style={{ padding: "26px 20px", borderBottom: `1px solid ${C.border}` }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: C.text, letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: 1.5 }}>
             Global Metabolic<br />Health Observatory
           </div>
-          <div style={{ fontSize: 11, color: C.muted, marginTop: 4 }}>CST4245 · Assessment 01</div>
+          <div style={{ fontSize: 11, color: C.muted, marginTop: 6, fontWeight: 500, letterSpacing: "0.02em" }}>CST4245 · Assessment 01</div>
         </div>
 
         {/* Nav */}
-        <div style={{ flex: 1, padding: "12px 8px", overflowY: "auto" }}>
-          <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: C.muted, padding: "8px 8px 4px" }}>
+        <div style={{ flex: 1, padding: "16px 12px", overflowY: "auto" }}>
+          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: C.muted, padding: "0 12px 10px" }}>
             Sections
           </div>
           {SECTIONS.map((s) => (
@@ -659,70 +660,70 @@ export default function App() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 10,
-                padding: "9px 10px",
-                borderRadius: 8,
+                gap: 12,
+                padding: "11px 12px",
+                borderRadius: 10,
                 cursor: "pointer",
                 fontSize: 13,
-                color: active === s.id ? "#fff" : C.muted,
-                background: active === s.id ? s.accent + "22" : "transparent",
-                border: active === s.id ? `1px solid ${s.accent}44` : "1px solid transparent",
+                color: active === s.id ? "#ffffff" : C.muted,
+                background: active === s.id ? s.accent + "18" : "transparent",
+                border: "none",
                 width: "100%",
                 textAlign: "left",
-                marginBottom: 2,
-                fontWeight: active === s.id ? 500 : 400,
-                transition: "all .15s",
+                marginBottom: 4,
+                fontWeight: active === s.id ? 600 : 400,
+                transition: "all .2s ease",
               }}
             >
-              <span style={{ fontSize: 15, flexShrink: 0 }}>{s.icon}</span>
+              <span style={{ fontSize: 16, flexShrink: 0, opacity: active === s.id ? 1 : 0.7 }}>{s.icon}</span>
               <span>{s.nav}</span>
             </button>
           ))}
         </div>
 
         {/* Footer */}
-        <div style={{ padding: "12px 16px", borderTop: `1px solid ${C.border}`, fontSize: 11, color: C.muted }}>
-          200 countries · 1980–2014 · Altair / Python
+        <div style={{ padding: "16px 20px", borderTop: `1px solid ${C.border}`, fontSize: 11, color: C.muted, fontWeight: 500, letterSpacing: "0.01em" }}>
+          200 countries · 1980–2014 · Altair
         </div>
       </div>
 
-      {/* ── Main ── */}
+      {/* ── Main Canvas ── */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
 
-        {/* Topbar */}
+        {/* Top bar */}
         <div style={{
           background: C.surface,
           borderBottom: `1px solid ${C.border}`,
-          padding: "0 24px",
-          height: 56,
+          padding: "0 32px",
+          height: 68,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           flexShrink: 0,
         }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <span style={{
-              fontSize: 11, fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase",
-              padding: "4px 10px", borderRadius: 20, color: sec.badgeColor, background: sec.badgeBg,
+              fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase",
+              padding: "5px 12px", borderRadius: 6, color: sec.badgeColor, background: sec.badgeBg,
             }}>
               {sec.badge}
             </span>
-            <span style={{ fontSize: 15, fontWeight: 500, color: C.text }}>{sec.title}</span>
+            <span style={{ fontSize: 17, fontWeight: 700, color: C.text, letterSpacing: "-0.02em" }}>{sec.title}</span>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             {[["200", "countries"], ["1980–2014", "period"], ["3", "indicators"]].map(([val, lbl]) => (
               <div key={lbl} style={{
-                background: C.card, border: `1px solid ${C.border}`,
-                borderRadius: 20, padding: "5px 12px", fontSize: 12, color: C.muted,
+                background: "rgba(23, 26, 35, 0.5)", border: `1px solid ${C.border}`,
+                borderRadius: 30, padding: "6px 14px", fontSize: 12, color: C.muted,
               }}>
-                <span style={{ color: C.text, fontWeight: 500 }}>{val}</span> {lbl}
+                <span style={{ color: C.text, fontWeight: 600 }}>{val}</span> {lbl}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Scrollable content */}
-        <div style={{ flex: 1, overflowY: "auto", padding: "20px 24px", background: C.bg }}>
+        {/* Dynamic Panel View */}
+        <div style={{ flex: 1, overflowY: "auto", padding: "28px 32px", background: C.bg }}>
           <SectionPanel section={sec} />
         </div>
       </div>
