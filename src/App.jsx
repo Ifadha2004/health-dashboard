@@ -2,12 +2,12 @@ import { useState } from "react";
 
 // ─── Premium Colour Tokens ───────────────────────────────────────────────────
 const C = {
-  bg:       "#0a0c10", // Deeper rich dark background
-  surface:  "#111319", // Slightly lighter for structural containers
-  card:     "#171a23", // Card surface
-  border:   "#222735", // Refined, subtle borders
-  text:     "#f1f3f9", // Bright text for maximum contrast
-  muted:    "#8a93a6", // Clean, readable secondary text
+  bg:       "#0a0c10",
+  surface:  "#111319",
+  card:     "#171a23",
+  border:   "#222735",
+  text:     "#f1f3f9",
+  muted:    "#8a93a6",
   subtle:   "#2c3142",
   purple:   "#8B80F9",
   teal:     "#14B8A6",
@@ -33,10 +33,10 @@ const SECTIONS = [
     badgeColor: "#AFA9EC",
     tagClass: "purple",
     kpis: [
-      { label: "Obesity growth",    value: "+180%", delta: "Fastest rising indicator",  dc: C.teal   },
-      { label: "Diabetes growth",   value: "+90%",  delta: "Steady upward trend",       dc: C.amber  },
-      { label: "Blood pressure",    value: "−12%",  delta: "Declined post-2000",        dc: C.red    },
-      { label: "Study period",      value: "35 yrs",delta: "1980 → 2014",              dc: C.muted  },
+      { label: "Obesity growth",    value: "+143%",  delta: "Fastest rising indicator",   dc: C.teal  },
+      { label: "Diabetes growth",   value: "+90%",   delta: "Steady upward trend",        dc: C.amber },
+      { label: "Blood pressure",    value: "−18.8%", delta: "Overall decline, 1980–2014", dc: C.red   },
+      { label: "Study period",      value: "35 yrs", delta: "1980 → 2014",               dc: C.muted },
     ],
     interaction: {
       number: 1,
@@ -64,7 +64,7 @@ const SECTIONS = [
         height: 260,
       },
     ],
-    finding: "Obesity grew approximately <b>3× faster</b> than any other indicator between 1980 and 2014. Raised blood pressure, by contrast, declined after 2000 — suggesting that antihypertensive medication and public health campaigns had measurable population-level impact, while the obesity epidemic remained largely unchecked.",
+    finding: "Obesity was the <b>fastest-rising indicator</b>, increasing from 8.38% in 1980 to 20.34% in 2014, a relative rise of 142.6%. Diabetes also increased substantially, while raised blood pressure declined overall, showing that global metabolic risk has shifted away from blood-pressure dominance toward obesity- and diabetes-linked burden.",
   },
   {
     id: 1,
@@ -77,10 +77,10 @@ const SECTIONS = [
     badgeColor: "#85B7EB",
     tagClass: "blue",
     kpis: [
-      { label: "Highest burden",  value: "Pacific",  delta: "Nauru, Cook Is., Palau", dc: C.red    },
-      { label: "Fastest growth",  value: "Africa",   delta: "Sub-Saharan region",     dc: C.amber  },
-      { label: "Gulf states",     value: "Top 5",    delta: "In risk ranking (2014)",  dc: C.orange },
-      { label: "Countries mapped",value: "200",      delta: "Global coverage",         dc: C.muted  },
+      { label: "Highest burden",   value: "Pacific",  delta: "American Samoa, Nauru, Cook Is.", dc: C.red    },
+      { label: "Fastest growth",   value: "Pacific+", delta: "Tokelau, Solomon Is., PNG",       dc: C.amber  },
+      { label: "Gulf states",      value: "Top 20",   delta: "Kuwait, Qatar, Saudi Arabia",     dc: C.orange },
+      { label: "Countries mapped", value: "200",      delta: "Global coverage",                 dc: C.muted  },
     ],
     interaction: {
       number: 2,
@@ -116,7 +116,7 @@ const SECTIONS = [
       icon: "🗺️",
       height: 320,
     },
-    finding: "Pacific Island nations (Nauru, Cook Islands, Palau) and Gulf states consistently top the combined risk ranking, driven by dietary transition and sedentary lifestyles. Sub-Saharan Africa shows the lowest current burden but the highest growth trajectory — making it a critical region for early prevention investment.",
+    finding: "Pacific Island countries dominate the highest combined-risk ranking in 2014, with <b>American Samoa, Nauru, Cook Islands, Palau, and Niue</b> occupying the top positions. Gulf countries also appear within the wider high-risk group, but not the top five. The change analysis shows that several Pacific and other developing contexts experienced rapid risk growth, while currently lower-risk countries require early prevention before burdens escalate further.",
   },
   {
     id: 2,
@@ -129,10 +129,10 @@ const SECTIONS = [
     badgeColor: "#ED93B1",
     tagClass: "pink",
     kpis: [
-      { label: "Obesity gap",       value: "Women",  delta: "Higher globally",        dc: C.pink   },
-      { label: "Blood pressure gap",value: "Men",    delta: "Higher globally",        dc: C.blue   },
-      { label: "Diabetes gap",      value: "Mixed",  delta: "Varies by region",       dc: C.teal   },
-      { label: "Countries analysed",value: "Top 20", delta: "Largest gender gaps",    dc: C.muted  },
+      { label: "Obesity gap",        value: "Women",  delta: "Higher globally",     dc: C.pink  },
+      { label: "Blood pressure gap", value: "Men",    delta: "Higher globally",     dc: C.blue  },
+      { label: "Diabetes gap",       value: "Mixed",  delta: "Varies by region",    dc: C.teal  },
+      { label: "Countries analysed", value: "Top 20", delta: "Largest gender gaps", dc: C.muted },
     ],
     interaction: {
       number: 3,
@@ -160,7 +160,7 @@ const SECTIONS = [
         height: 260,
       },
     ],
-    finding: "Women carry a <b>consistently higher obesity burden</b> across nearly all countries, while men show higher raised blood pressure prevalence. The gender gap in obesity has <b>widened since 2000</b>, particularly in Middle Eastern and North African countries, suggesting that public health campaigns need explicit gender-differentiated strategies.",
+    finding: "Women show a <b>consistently higher global obesity burden</b>, while men show higher raised blood pressure prevalence. The largest combined-risk gender gaps are concentrated in countries such as Lesotho, South Africa, Swaziland, Botswana, and Zimbabwe, suggesting that gender-sensitive health strategies are needed rather than uniform national campaigns.",
   },
   {
     id: 3,
@@ -173,10 +173,10 @@ const SECTIONS = [
     badgeColor: "#5DCAA5",
     tagClass: "teal",
     kpis: [
-      { label: "Obesity–diabetes",   value: "r ≈ 0.6",  delta: "Moderate positive link",    dc: C.teal   },
-      { label: "Obesity–BP",         value: "Weak –ve", delta: "Inverse relationship",       dc: C.blue   },
-      { label: "Outlier nations",    value: "Gulf",     delta: "High diabetes vs low obesity",dc: C.amber  },
-      { label: "Deviation method",   value: "Residuals",delta: "From regression line",       dc: C.muted  },
+      { label: "Obesity–diabetes", value: "r ≈ 0.76",  delta: "Strong positive link",           dc: C.teal  },
+      { label: "Obesity–BP",       value: "r ≈ −0.34", delta: "Weak inverse relationship",      dc: C.blue  },
+      { label: "Outlier nations",  value: "Pacific+",  delta: "Higher diabetes than expected", dc: C.amber },
+      { label: "Deviation method", value: "Residuals", delta: "From regression line",          dc: C.muted },
     ],
     interaction: {
       number: 4,
@@ -212,7 +212,7 @@ const SECTIONS = [
         height: 220,
       },
     ],
-    finding: "Obesity and diabetes are <b>positively correlated</b> globally, but the relationship is far from uniform. Several Gulf and Pacific Island nations show <b>disproportionately high diabetes</b> relative to their obesity levels — pointing to genetic predisposition and dietary composition (high refined carbohydrate intake) as independent risk factors beyond BMI alone.",
+    finding: "Obesity and diabetes are <b>strongly positively correlated</b> globally, with r ≈ 0.76, but the relationship is not uniform. Countries such as Tokelau, American Samoa, Niue, Afghanistan, Nauru, Pakistan, and Kuwait show higher diabetes prevalence than expected based on obesity alone. This suggests that BMI is an important but incomplete explanation, and that additional demographic, dietary, genetic, healthcare, or socioeconomic factors may influence diabetes burden.",
   },
   {
     id: 4,
@@ -225,10 +225,10 @@ const SECTIONS = [
     badgeColor: "#EF9F27",
     tagClass: "amber",
     kpis: [
-      { label: "Clusters identified", value: "4",       delta: "K-Means, k=4",            dc: C.amber  },
-      { label: "High-risk cluster",   value: "Pacific", delta: "Highest combined burden",  dc: C.red    },
-      { label: "Low-risk cluster",    value: "Africa",  delta: "But fastest growing",      dc: C.teal   },
-      { label: "Risk transitions",    value: "80%+",    delta: "Countries moved upward",   dc: C.blue   },
+      { label: "Clusters identified", value: "4",     delta: "K-Means, k=4",                  dc: C.amber },
+      { label: "High-risk cluster",   value: "14",    delta: "Mostly Pacific countries",      dc: C.red   },
+      { label: "Low-risk cluster",    value: "90",    delta: "Lower current combined burden", dc: C.teal  },
+      { label: "Risk transitions",    value: "46.5%", delta: "Countries moved upward",        dc: C.blue  },
     ],
     interaction: null,
     charts: [
@@ -257,7 +257,7 @@ const SECTIONS = [
       icon: "🔲",
       height: 280,
     },
-    finding: "Four distinct health profiles emerge: <b>high combined burden</b> (Pacific Islands, Gulf states), <b>elevated mixed risk</b> (high-income Western nations), <b>moderate</b> (Latin America, Eastern Europe), and <b>low current risk</b> (Sub-Saharan Africa, South/Southeast Asia). The transition heatmap shows that <b>over 80% of countries escalated at least one risk category</b> between 1980 and 2014.",
+    finding: "Four distinct health profiles emerge from the clustering analysis. The <b>high combined-risk cluster</b> is dominated by Pacific Island countries, while the elevated mixed-risk cluster includes several Gulf, North African, Caribbean, and high-burden middle-income contexts. The transition heatmap shows that <b>46.5% of countries moved into a higher risk category</b> between 1980 and 2014, while only 2.5% improved, indicating that risk progression was far more common than risk reduction.",
   },
   {
     id: 5,
@@ -270,10 +270,10 @@ const SECTIONS = [
     badgeColor: "#F0997B",
     tagClass: "coral",
     kpis: [
-      { label: "Urgent intervention", value: "~50", delta: "High risk + high growth",   dc: C.red    },
-      { label: "Maintain / control",  value: "~50", delta: "High risk, slower growth",  dc: C.orange },
-      { label: "Early prevention",    value: "~50", delta: "Low risk but accelerating", dc: C.blue   },
-      { label: "Monitoring",          value: "~50", delta: "Low risk + low growth",     dc: C.gray   },
+      { label: "Urgent intervention", value: "46", delta: "High risk + high growth",   dc: C.red    },
+      { label: "Maintain / control",  value: "54", delta: "High risk, slower growth",  dc: C.orange },
+      { label: "Early prevention",    value: "54", delta: "Low risk but accelerating", dc: C.blue   },
+      { label: "Monitoring",          value: "46", delta: "Low risk + low growth",     dc: C.gray   },
     ],
     interaction: {
       number: 5,
@@ -301,7 +301,7 @@ const SECTIONS = [
         height: 260,
       },
     ],
-    finding: "The priority matrix reveals that countries requiring <b>urgent intervention</b> (high current burden + high growth) are concentrated in the Pacific and Gulf regions. Countries in the <b>early prevention</b> quadrant — particularly in Sub-Saharan Africa — represent the highest-leverage opportunity: acting now, before burdens escalate, is dramatically more cost-effective than managing chronic disease at scale.",
+    finding: "The priority matrix separates countries by current risk and historical growth. <b>Urgent-intervention</b> countries combine high present burden with rapid growth and are concentrated mainly among Pacific Island and selected Middle Eastern/North African contexts. Early-prevention countries have lower current burden but above-median growth, making them important candidates for preventive policy before risk levels become harder to manage.",
     findingLabel: "Policy recommendation",
   },
 ];
@@ -531,10 +531,8 @@ function SectionPanel({ section }) {
 
   return (
     <div>
-      {/* Fullscreen modal */}
       {modal && <FullscreenModal varName={modal.varName} title={modal.title} onClose={closeModal} />}
 
-      {/* KPIs */}
       {kpis && (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, marginBottom: 24 }}>
           {kpis.map((k) => (
@@ -543,10 +541,8 @@ function SectionPanel({ section }) {
         </div>
       )}
 
-      {/* Interaction banner */}
       <InteractionBanner interaction={interaction} accent={accent} />
 
-      {/* Main interaction chart */}
       {interaction && (
         <div style={{ marginBottom: 24 }}>
           <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.2)" }}>
@@ -576,7 +572,6 @@ function SectionPanel({ section }) {
         </div>
       )}
 
-      {/* Supporting charts */}
       {charts && (
         <div style={{
           display: "grid",
@@ -599,7 +594,6 @@ function SectionPanel({ section }) {
         </div>
       )}
 
-      {/* Extra full-width chart */}
       {extraChart && (
         <div style={{ marginBottom: 24 }}>
           <ChartCard
@@ -615,7 +609,6 @@ function SectionPanel({ section }) {
         </div>
       )}
 
-      {/* Key finding */}
       {finding && (
         <FindingBox text={finding} label={findingLabel} accent={accent} />
       )}
@@ -630,8 +623,6 @@ export default function App() {
 
   return (
     <div style={{ display: "flex", height: "100vh", overflow: "hidden", background: C.bg, color: C.text, fontFamily: '"Inter", system-ui, -apple-system, sans-serif' }}>
-
-      {/* ── Sidebar ── */}
       <div style={{
         width: 250,
         minWidth: 250,
@@ -640,7 +631,6 @@ export default function App() {
         display: "flex",
         flexDirection: "column",
       }}>
-        {/* Logo */}
         <div style={{ padding: "26px 20px", borderBottom: `1px solid ${C.border}` }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.text, letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: 1.5 }}>
             Global Metabolic<br />Health Observatory
@@ -648,7 +638,6 @@ export default function App() {
           <div style={{ fontSize: 11, color: C.muted, marginTop: 6, fontWeight: 500, letterSpacing: "0.02em" }}>CST4245 · Assessment 01</div>
         </div>
 
-        {/* Nav */}
         <div style={{ flex: 1, padding: "16px 12px", overflowY: "auto" }}>
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: C.muted, padding: "0 12px 10px" }}>
             Sections
@@ -681,16 +670,12 @@ export default function App() {
           ))}
         </div>
 
-        {/* Footer */}
         <div style={{ padding: "16px 20px", borderTop: `1px solid ${C.border}`, fontSize: 11, color: C.muted, fontWeight: 500, letterSpacing: "0.01em" }}>
           200 countries · 1980–2014 · Altair
         </div>
       </div>
 
-      {/* ── Main Canvas ── */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
-
-        {/* Top bar */}
         <div style={{
           background: C.surface,
           borderBottom: `1px solid ${C.border}`,
@@ -703,18 +688,29 @@ export default function App() {
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <span style={{
-              fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase",
-              padding: "5px 12px", borderRadius: 6, color: sec.badgeColor, background: sec.badgeBg,
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              padding: "5px 12px",
+              borderRadius: 6,
+              color: sec.badgeColor,
+              background: sec.badgeBg,
             }}>
               {sec.badge}
             </span>
             <span style={{ fontSize: 17, fontWeight: 700, color: C.text, letterSpacing: "-0.02em" }}>{sec.title}</span>
           </div>
+
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             {[["200", "countries"], ["1980–2014", "period"], ["3", "indicators"]].map(([val, lbl]) => (
               <div key={lbl} style={{
-                background: "rgba(23, 26, 35, 0.5)", border: `1px solid ${C.border}`,
-                borderRadius: 30, padding: "6px 14px", fontSize: 12, color: C.muted,
+                background: "rgba(23, 26, 35, 0.5)",
+                border: `1px solid ${C.border}`,
+                borderRadius: 30,
+                padding: "6px 14px",
+                fontSize: 12,
+                color: C.muted,
               }}>
                 <span style={{ color: C.text, fontWeight: 600 }}>{val}</span> {lbl}
               </div>
@@ -722,7 +718,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Dynamic Panel View */}
         <div style={{ flex: 1, overflowY: "auto", padding: "28px 32px", background: C.bg }}>
           <SectionPanel section={sec} />
         </div>
